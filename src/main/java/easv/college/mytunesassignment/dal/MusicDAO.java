@@ -24,7 +24,8 @@ public class MusicDAO {
                 String title = rs.getString("title");
                 String artist = rs.getString("artist");
                 String genre = rs.getString("genre");
-                Music music = new Music(id,title,artist,genre);
+                int duration = rs.getInt("duration");
+                Music music = new Music(id,title,artist,genre,duration);
                 musicList.add(music);
 
 

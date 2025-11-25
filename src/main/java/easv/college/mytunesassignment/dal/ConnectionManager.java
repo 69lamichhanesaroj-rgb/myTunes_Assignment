@@ -10,7 +10,7 @@ public class ConnectionManager {
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setDatabaseName("MyTunesAssignmentGroup8International");
         ds.setUser("XXX");
-        ds.setPassword("xxx");
+        ds.setPassword("XXX");
         ds.setServerName("EASV-DB4");
         ds.setPortNumber(1433);
         ds.setTrustServerCertificate(true);

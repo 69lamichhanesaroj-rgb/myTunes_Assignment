@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="363.0" prefWidth="579.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="easv.college.mytunesassignment.gui.editSongController">
+<AnchorPane prefHeight="363.0" prefWidth="579.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="easv.college.mytunesassignment.gui.EditSongController">
    <children>
       <TextField fx:id="txtTitle" layoutX="143.0" layoutY="64.0" prefHeight="25.0" prefWidth="277.0" promptText="Title of the Music" />
       <TextField fx:id="txtArtist" layoutX="143.0" layoutY="102.0" prefHeight="25.0" prefWidth="277.0" promptText="Name of the Artist" />
       <TextField fx:id="sourceFileToAddMusic" layoutX="143.0" layoutY="232.0" prefHeight="25.0" prefWidth="277.0" promptText="Choose file to upload" />
-      <Spinner layoutX="143.0" layoutY="147.0" />
       <TextField fx:id="musicDuration" layoutX="143.0" layoutY="190.0" promptText="Music duration" />
       <Text layoutX="87.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" wrappingWidth="45.13671875">
          <font>
@@ -39,8 +38,9 @@
             <Font name="Lucida Bright" size="16.0" />
          </font>
       </Text>
-      <Button fx:id="choosePathToSelectMusic" layoutX="447.0" layoutY="233.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Choose" />
-      <Button fx:id="cancelEditOrNew" layoutX="384.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Cancel" />
-      <Button fx:id="saveNewSelecteEdited" layoutX="469.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Save" />
+      <Button fx:id="browsePathToSelectMusic" layoutX="447.0" layoutY="233.0" mnemonicParsing="false" onAction="#choosePathToSelectMusicAction" prefHeight="25.0" prefWidth="94.0" text="Choose" />
+      <Button fx:id="cancelEditMusic" layoutX="384.0" layoutY="302.0" mnemonicParsing="false" onAction="#cancelEditMusicAction" prefHeight="25.0" prefWidth="72.0" text="Cancel" />
+      <Button fx:id="saveEditedMusic" layoutX="469.0" layoutY="302.0" mnemonicParsing="false" onAction="#saveEditedMusicAction" prefHeight="25.0" prefWidth="72.0" text="Save" />
+      <ComboBox layoutX="143.0" layoutY="146.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

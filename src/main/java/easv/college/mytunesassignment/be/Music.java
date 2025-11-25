@@ -5,12 +5,14 @@ public class Music {
     private String title;
     private String artist;
     private String genre;
+    private int duration;
 
-    public Music (int id, String title, String artist, String genre) {
+    public Music (int id, String title, String artist, String genre , int duration) {
         this.id = id;
         this.title = title;
         this.artist = artist;
         this.genre = genre;
+        this.duration = duration;
 
     }
 
@@ -45,8 +47,17 @@ public class Music {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
     @Override
     public String toString() {
-        return ("Music id=" + id + ", title=" + title + "artist=" + artist + "genre=" + genre);
+        return ("Music id=" + id + ", title=" + title + "artist=" + artist + "genre=" + genre + "duration=" + duration);
     }
 }

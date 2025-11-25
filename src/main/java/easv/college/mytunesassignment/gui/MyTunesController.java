@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -47,14 +46,14 @@ public class MyTunesController implements Initializable {
     private ImageView forwardBtn;
 
     @FXML
-    private ListView<?> listInPlaylist;
+    private ListView<Music> musicInPlaylist;
 
     @FXML
-    private ListView<Music> listMusicLibrary;
+    private TableView<Music> allMusicLibrary;
 
 
     @FXML
-    private ListView<?> listPlaylist;
+    private TableView<Music> nameOfPlaylist;
 
     @FXML
     private ProgressBar musicProgress;
@@ -75,7 +74,15 @@ public class MyTunesController implements Initializable {
     private Button sendToPlaylist;
 
     @FXML
-    void addNewMusicLibraryAction(ActionEvent event) {
+    void addNewMusicLibraryAction(ActionEvent event) throws IOException  {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/easv/college/mytunesassignment/editSong-view.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Esbjerg Music Player ♫");
+        stage.setScene(scene);
+        stage.show();
+
 
     }
 
@@ -88,17 +95,17 @@ public class MyTunesController implements Initializable {
     }
 
     @FXML
-    void createNewPlaylistAction(ActionEvent event) throws IOException {
-//        URL fxml = getClass().getResource("src/main/resources/easv/college/mytunesassignment/editSong-view.fxml");
-//        System.out.println(fxml);
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/easv/college/mytunesassignment/editSong-view.fxml"));
+    void createNewPlaylistAction(ActionEvent event)  throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/easv/college/mytunesassignment/newPlaylist-view.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-        stage.setTitle("Esbjerg Music Player ♫");
         stage.setScene(scene);
+        stage.setTitle("Create New Playlist");
         stage.show();
+
+
+
 
 
     }
@@ -148,7 +155,14 @@ public class MyTunesController implements Initializable {
     }
 
     @FXML
-    void editMusicLibraryAction(ActionEvent event) {
+    void editMusicLibraryAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/easv/college/mytunesassignment/editSong-view.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Esbjerg Music Player ♫");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
@@ -169,9 +183,9 @@ public class MyTunesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        listMusicLibrary.getItems();
-        listPlaylist.getItems();
-        listInPlaylist.getItems();
+        allMusicLibrary.getItems();
+        nameOfPlaylist.getItems();
+        musicInPlaylist.getItems();
 
 
     }

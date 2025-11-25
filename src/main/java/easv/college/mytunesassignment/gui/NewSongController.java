@@ -1,4 +1,4 @@
 package easv.college.mytunesassignment.gui;
 
-public class editSongController {
+public class NewSongController {
 }
